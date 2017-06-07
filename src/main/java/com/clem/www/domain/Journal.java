@@ -62,10 +62,9 @@ public class Journal {
     public Journal() {
     }
 
-    public Journal(String title, String date, String summary) throws ParseException {
+    public Journal(String title, String summary, String date) throws ParseException {
         this.title = title;
         this.created = format.parse(date);
-        ;
         this.summary = summary;
     }
 
