@@ -11,7 +11,6 @@
 <body>
 <div class="container">
     <h1>Spring Boot Journal</h1>
-    <p>点击 <a th:href="@{/login}">这里</a> 打个招呼吧</p>
     <ul class="timeline">
         <div th:each="entry,status:${journal}">
             <li th:attr="class=${status.odd}?'timeline-inverted':''">
