@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -33,6 +35,7 @@ public class JournalController {
 //    }
 
     private static final String VIEW_INDEX = "index";
+    private static final String VIEW_LOGIN = "login";
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(ModelAndView modelAndView) {
@@ -52,8 +55,9 @@ public class JournalController {
         repo.save(user);
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login() {
-        return new ModelAndView("login");
+    @RequestMapping(value = "/login")
+    public ModelAndView login(ModelAndView modelAndView) {
+        modelAndView.setViewName(VIEW_LOGIN);
+        return modelAndView;
     }
 }

@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/ extras/spring-security">
 <head>
     <meta charset="UTF-8"></meta>
     <meta http-equiv="Content-Type" content="text/html"></meta>
     <title>Spring Boot Journal</title>
+    <p sec:authorize="isAuthenticated()">
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    </p>
     <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-glyphicons.css"/>
     <link rel="stylesheet" type="text/css" media="all" href="css/styles.css"/>
