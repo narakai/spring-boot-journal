@@ -51,4 +51,9 @@ public class JournalController {
     public void saveUser(@RequestBody JournalEntry user) {
         repo.save(user);
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login() {
+        return new ModelAndView("login");
+    }
 }
