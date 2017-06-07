@@ -11,7 +11,8 @@ import java.util.Date;
 
 // jpa
 @Entity
-public class Journal {
+@Table(name="entry")
+public class JournalEntry {
     public Long getId() {
         return id;
     }
@@ -59,10 +60,10 @@ public class Journal {
     @Transient
     private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 
-    public Journal() {
+    public JournalEntry() {
     }
 
-    public Journal(String title, String summary, String date) throws ParseException {
+    public JournalEntry(String title, String summary, String date) throws ParseException {
         this.title = title;
         this.created = format.parse(date);
         this.summary = summary;
