@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 @EnableGlobalAuthentication
 public class InMemorySecurityConfiguration {
 
+        //test
        @Autowired
        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
                auth.inMemoryAuthentication().withUser("user").password("root").roles("USER")
